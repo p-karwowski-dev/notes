@@ -1,9 +1,10 @@
 import { CodeBox } from '../components/CodeBox'
 import { codeExample1 } from '../components/codeExamples'
+import { Layout } from '../components/Layout'
 
 export default function Home() {
   return (
-    <div className="m-8 flex flex-col w-full">
+    <Layout>
       <h1 className="font-bold text-gray-900 text-2xl mb-4">
         Developer's notes
       </h1>
@@ -22,6 +23,6 @@ export default function Home() {
       </section>
 
       <CodeBox>{codeExample1}</CodeBox>
-    </div>
+    </Layout>
   )
 }
