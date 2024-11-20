@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 import { listOfTopics } from './router'
 import { useCallback, useState } from 'react'
 
@@ -34,7 +34,12 @@ export default function Sidebar() {
           <ul>
             {topics.map(({ path, name }) => (
               <li key={path}>
-                <Link to={`${path}`}>{name}</Link>
+                <NavLink
+                  to={`/topic/${path}`}
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                >
+                  {name}
+                </NavLink>
               </li>
             ))}
           </ul>

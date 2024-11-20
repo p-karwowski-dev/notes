@@ -4,8 +4,8 @@ import NotFound from './ErrorPage'
 import Sidebar from './Sidebar'
 
 export const listOfTopics = [
-  { path: '/topic/first-topic', name: 'First Topic' },
-  { path: '/topic/second-topic', name: 'Second Topic' },
+  { path: 'first-topic', name: 'First Topic' },
+  { path: 'second-topic', name: 'Second Topic' },
 ]
 
 export const router = createBrowserRouter([
