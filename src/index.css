@@ -83,6 +83,8 @@ form[action$='destroy'] button {
 }
 
 #sidebar {
+  position: fixed;
+  height: 100%;
   width: 22rem;
   background-color: #f7f7f7;
   border-right: solid 1px #e3e3e3;

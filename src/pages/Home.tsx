@@ -1,6 +1,6 @@
-import { CodeBox } from '../components/CodeBox'
 import { codeExample1 } from '../components/codeExamples'
-import { Layout } from '../components/Layout'
+import CodeBox from '../components/CodeBox'
+import Layout from '../components/Layout'
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
         <img alt="react-icon" width="300px" height="300px" src="/logo512.png" />
       </section>
 
-      <CodeBox>{codeExample1}</CodeBox>
+      <CodeBox text="Code example">{codeExample1}</CodeBox>
     </Layout>
   )
 }
