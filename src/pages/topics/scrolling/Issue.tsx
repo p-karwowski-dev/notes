@@ -1,5 +1,5 @@
 import { UIEvent, useState } from 'react'
-import SlowComponent from '../../components/SlowComponent'
+import SlowComponent from '../../../components/SlowComponent'
 
 const FloatingBox = ({ top }: { top: number }) => (
   <div className="absolute left-10 w-12 h-6 bg-black" style={{ top }}>

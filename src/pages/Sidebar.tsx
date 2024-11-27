@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import { listOfTopics } from './router'
 import { useCallback, useState } from 'react'
 

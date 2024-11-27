@@ -1,5 +1,3 @@
-import Issue from './Issue'
-
 export const issueCode = `
 const FloatingBox = ({ top }: { top: number }) => (
   <div className="absolute left-10 w-12 h-6 bg-black" style={{ top }}>
