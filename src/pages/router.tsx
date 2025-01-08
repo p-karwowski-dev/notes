@@ -8,8 +8,8 @@ import LoadingOnScrollingObserver from './topics/LoadingOnScrollingObserver'
 export const listOfTopics = [
   { path: 'scrolling-performance-issue', name: 'Scrolling performance issue' },
   {
-    path: 'loading-on-scrolling-intersection-observer',
-    name: 'Loading on scrolling',
+    path: 'infinity-scrolling-with-intersection-observer',
+    name: 'Infinity scrolling',
   },
 ]
 

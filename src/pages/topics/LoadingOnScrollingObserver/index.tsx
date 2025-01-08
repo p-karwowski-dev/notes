@@ -9,12 +9,12 @@ export default function LoadingOnScrollingObserver() {
   return (
     <Layout>
       <h1 className="font-bold text-gray-900 text-2xl mb-4">
-        Loading on scrolling using intersection observer
+        Infinity scrolling, loading on scroll using intersection observer
       </h1>
 
       <section className="flex flex-col gap-4">
         <Card color="red">
-          Issue: The data set is too big to be rendered on the screen at once
+          Issue: the data set is too big to be rendered on the screen at once
           and have to be loaded in sequence to prevent UI from freezing or
           render being delayed.
         </Card>
@@ -27,7 +27,7 @@ export default function LoadingOnScrollingObserver() {
         </Card>
 
         <Card color="green">
-          Option A: intersectionObserver and element reference as useCallback.
+          Option A: intersection observer and element reference as useCallback.
           UseCallback method receives the node as a parameter and logic is
           triggered whenever a reference is changed.
           <div className="flex justify-between">
@@ -37,7 +37,7 @@ export default function LoadingOnScrollingObserver() {
         </Card>
 
         <Card color="green">
-          Option B: intersectionObserver, element reference and useEffect. Last
+          Option B: intersection observer, element reference and useEffect. Last
           element's reference is saved and logic is handled in useEffect.
           <div className="flex justify-between">
             <SolutionB />
