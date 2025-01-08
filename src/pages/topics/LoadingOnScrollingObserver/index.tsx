@@ -1,8 +1,9 @@
 import Card from '../../../components/Card'
 import CodeBox from '../../../components/CodeBox'
 import Layout from '../../../components/Layout'
-import Solution from './Solution'
-import { SolutionCode } from './code'
+import SolutionA from './SolutionA'
+import SolutionB from './SolutionB'
+import { solutionCodeA, solutionCodeB } from './code'
 
 export default function LoadingOnScrollingObserver() {
   return (
@@ -19,21 +20,30 @@ export default function LoadingOnScrollingObserver() {
         </Card>
 
         <Card color="green">
-          We can implement sequential rendering adding more elements to the list
+          Solution: sequential rendering by loading more elements to the list
           whenever the last element is in the viewport. The most optimal
           solution would be to implement pagination on the endpoint and request
-          additional data each time an event is triggered. This example
-          simulates rendering data in sequence using intersectionObserver and
-          element reference as useCallback. UseCallback method receives the node
-          as a parameter and logic is triggered whenever a new reference is
-          changed.
+          additional data each time an event is triggered.
         </Card>
 
-        <div className="flex justify-between">
-          <Solution />
-        </div>
+        <Card color="green">
+          Option A: intersectionObserver and element reference as useCallback.
+          UseCallback method receives the node as a parameter and logic is
+          triggered whenever a reference is changed.
+          <div className="flex justify-between">
+            <SolutionA />
+          </div>
+          <CodeBox text="Code with solution...">{solutionCodeA}</CodeBox>
+        </Card>
 
-        <CodeBox text="Code with solution...">{SolutionCode}</CodeBox>
+        <Card color="green">
+          Option B: intersectionObserver, element reference and useEffect. Last
+          element's reference is saved and logic is handled in useEffect.
+          <div className="flex justify-between">
+            <SolutionB />
+          </div>
+          <CodeBox text="Code with solution...">{solutionCodeB}</CodeBox>
+        </Card>
       </section>
     </Layout>
   )

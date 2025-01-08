@@ -1,9 +1,10 @@
-export const SolutionCode = `
+export const solutionCodeA = `
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { User } from '../../../types/user'
 import generateUsers from './generateUsers'
+import UserList from './UserList'
 
-export default function Solution() {
+export default function SolutionA() {
   const [users, setUsers] = useState<User[]>([])
   const observerRef = useRef<IntersectionObserver>()
 
@@ -25,26 +26,40 @@ export default function Solution() {
     [users]
   )
 
-  return (
-    <div className="w-full h-[300px] bg-cyan-200 rounded-xl m-auto overflow-scroll relative">
-      <div className="w-[200px] h-auto">
-        {users &&
-          users.map(({ id, name, surname, age }, index) => (
-            <div
-              ref={elemRef}
-              key={id}
-              className="flex flex-col h-auto p-8 bg-yellow-700 rounded-xl m-4"
-            >
-              <p>Index: {index}</p>
-              <p>Id: {id}</p>
-              <p>{name}</p>
-              <p>{surname}</p>
-              <p>{age}</p>
-            </div>
-          ))}
-      </div>
-    </div>
-  )
+  return <UserList users={users} elemRef={elemRef} />
 }
+`
 
+export const solutionCodeB = `
+import { useEffect, useRef, useState } from 'react'
+import { User } from '../../../types/user'
+import generateUsers from './generateUsers'
+import UserList from './UserList'
+
+export default function SolutionB() {
+  const [users, setUsers] = useState<User[]>([])
+  const elemRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    setUsers(generateUsers(5))
+  }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entires) => {
+      if (entires[0].isIntersecting) {
+        setUsers([...users, ...generateUsers(5)])
+      }
+    })
+
+    if (observer && elemRef.current) {
+      observer.observe(elemRef.current)
+    }
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [users])
+
+  return <UserList users={users} elemRef={elemRef} />
+}
 `

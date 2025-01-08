@@ -17,7 +17,7 @@ const ScrollBoxWithChildren = ({ children }: { children: ReactElement[] }) => {
 
   return (
     <div
-      className="w-[400px] h-[300px] bg-cyan-200 rounded-xl m-auto overflow-scroll relative"
+      className="h-[300px] bg-cyan-200 rounded-xl m-auto overflow-scroll relative"
       onScroll={handleScroll}
     >
       <FloatingBox top={top} />

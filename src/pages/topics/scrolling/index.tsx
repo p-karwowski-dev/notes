@@ -14,22 +14,22 @@ export default function TopicScrolling() {
 
       <section className="flex flex-col gap-4">
         <Card color="red">
-          Issue: The element on the left hand side doesn't scroll smoothly.
-          Scroll detection and state update happen on the top level component.
-          Scrolling triggers state update on top level which cause rerender all
-          components on this level, including SlowComponent.
+          Issue (left column): The element on the left hand side doesn't scroll
+          smoothly. Scroll detection and state update happen on the top level
+          component. Scrolling triggers state update on top level which cause
+          rerender all components on this level, including SlowComponent.
         </Card>
 
         <Card color="green">
-          Solution: Moving scroll detection and state update down to separate
-          wrapping element encapsulates logic and triggers update only in a
-          wrapper. This means that all elements on the top level will not be
-          rerendered, so will keep the same object references and can be safely
-          passed to the wrapper as props - in this case as children. React uses
-          shallow props comparison to define if an update should be passed to
-          the lover level. We passed only the same children's references so all
-          props are the same, and the update life cycle stops at wrapper
-          component.
+          Solution (right column): Moving scroll detection and state update down
+          to separate wrapping element encapsulates logic and triggers update
+          only in a wrapper. This means that all elements on the top level will
+          not be rerendered, so will keep the same object references and can be
+          safely passed to the wrapper as props - in this case as children.
+          React uses shallow props comparison to define if an update should be
+          passed to the lover level. We passed only the same children's
+          references so all props are the same, and the update life cycle stops
+          at wrapper component.
         </Card>
 
         <div className="flex justify-between">
